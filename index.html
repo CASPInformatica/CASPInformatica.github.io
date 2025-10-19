@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASPInformática | Hospital de PCs y Laptops - Reparación Express en 30-90 Minutos</title>
+    <meta name="description"
+        content="Reparación express de PCs y laptops en 30-90 minutos. Optimización, eliminación de virus, cambio de pantallas y más. Servicio técnico profesional con garantía.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // El elemento es visible en un 10%
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.service-card, .benefit-item, .testimonial-card, .action-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Habilita la animación para el Hero inmediatamente
+            document.querySelectorAll('.animate-in').forEach(el => {
+                el.classList.add('visible');
+            });
+        });
+    </script>
+
+    <style>
+        /* ==================== 1. Variables y Reset ==================== */
+        :root {
+            --primary: #1F618D;
+            /* Azul profesional oscuro */
+            --secondary: #FF8C00;
+            /* Naranja vibrante para el acento */
+            --accent: #FFD700;
+            /* Dorado/Amarillo para resaltar */
+            --light: #FFFFFF;
+            /* Blanco */
+            --dark: #212121;
+            /* Negro para texto principal */
+            --gray-light: #E7EEF4;
+            /* Gris muy suave */
+            --gray-medium: #607D8B;
+            /* Azul Grisáceo para texto secundario */
+            --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        body {
+            background-color: var(--gray-light);
+            color: var(--dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ==================== 2. Animaciones y Visibilidad ==================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animate-in.visible,
+        .service-card.visible,
+        .benefit-item.visible,
+        .testimonial-card.visible,
+        .action-card.visible {
+            animation: fadeInUp 0.8s ease-out;
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .service-card,
+        .benefit-item,
+        .testimonial-card,
+        .action-card,
+        .animate-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        /* ==================== 3. Tipografía y Encabezados ==================== */
+        h1,
+        h2,
+        h3 {
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .section-title span {
+            color: var(--secondary);
+        }
+
+        /* SOLUCIÓN DEFINITIVA: Ajustes específicos para evitar cortes */
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.1;
+        }
+
+        .brand-highlight {
+            color: var(--secondary);
+            font-weight: 600;
+            display: inline;
+            position: relative;
+        }
+
+        /* Garantizar que el emoji esté siempre visible y no cause cortes */
+        .emoji-rocket {
+            display: inline-block;
+            margin-left: 4px;
+        }
+
+        /* ==================== 4. Botones (CTA) ==================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-align: center;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--light);
+            border-color: var(--secondary);
+        }
+
+        .btn-primary:hover {
+            background-color: #e57e00;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--light);
+            border-color: var(--light);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-call {
+            background-color: #28a745;
+            color: var(--light);
+            border-color: #28a745;
+        }
+
+        .btn-call:hover {
+            background-color: #1e7e34;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-service {
+            background-color: var(--primary);
+            color: var(--light);
+            font-size: 0.9rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .btn-service:hover {
+            background-color: #174d71;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        /* ==================== 5. Header y Nav ==================== */
+        header {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-subtle);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links .btn-call {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+
+        .btn-header-call {
+            display: none;
+        }
+
+        /* ==================== 6. Hero Section ==================== */
+        .hero {
+            background: linear-gradient(rgba(33, 33, 33, 0.40), rgba(33, 33, 33, 0.40)),
+                url('fondo-hero.jpg') no-repeat center center/cover;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ==================== 7. Secciones Generales ==================== */
+        section {
+            padding: 80px 0;
+        }
+
+        /* ==================== 8. Servicios ==================== */
+        .services {
+            background-color: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--light);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border-top: 6px solid var(--secondary);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 320px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            border-radius: 50%;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--dark);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .service-actions {
+            margin-top: auto;
+        }
+
+        /* ==================== 9. Beneficios/Por Qué Elegirnos ==================== */
+        .benefits {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .benefits .section-title {
+            color: var(--light);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .benefit-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .benefit-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        /* ==================== 10. Testimonios ==================== */
+        .testimonials {
+            background-color: var(--gray-light);
+            padding: 100px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-subtle);
+            position: relative;
+            border-left: 4px solid var(--primary);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .author-info {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .rating {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        /* ==================== 11. Contacto Rápido ==================== */
+        .quick-actions {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .quick-actions .section-title {
+            color: var(--light);
+            margin-bottom: 30px;
+        }
+
+        .quick-actions .section-title .brand-highlight {
+            color: var(--secondary) !important;
+        }
+
+        .actions-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .action-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow-hover);
+            flex: 0 1 280px;
+            transition: transform 0.3s ease;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .action-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .action-card p {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .action-card .btn-service {
+            background-color: var(--secondary);
+            color: var(--light);
+        }
+
+        .action-card .btn-call {
+            background-color: #28a745;
+        }
+
+        /* ==================== 12. Sección de Mapa ==================== */
+        .map-section {
+            padding: 0;
+            background-color: var(--light);
+        }
+
+        .map-container {
+            overflow: hidden;
+            position: relative;
+            padding-top: 56.25%;
+            height: 0;
+            width: 100%;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .map-section p {
+            text-align: center;
+            padding: 20px 20px 40px;
+            font-size: 1rem;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        /* ==================== 13. WhatsApp Flotante ==================== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float i {
+            display: block;
+        }
+
+        /* ==================== 14. Footer ==================== */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .footer-section {
+            flex: 1 1 220px;
+            min-width: 200px;
+            margin-bottom: 25px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            color: var(--light);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .footer-section li a {
+            color: var(--gray-medium);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: flex-start;
+        }
+
+        .footer-section li a:hover {
+            color: var(--light);
+        }
+
+        .footer-section li {
+            color: var(--gray-medium);
+            margin-bottom: 8px;
+        }
+
+        .footer-section li i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+
+        .schedule-list li {
+            margin-bottom: 5px;
+            color: var(--gray-medium);
+            line-height: 1.4;
+        }
+
+        .schedule-list .day {
+            font-weight: 600;
+            color: var(--light);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: var(--gray-medium);
+        }
+
+        /* ==================== 15. Media Queries (Responsivo) ==================== */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+
+            .header-container {
+                justify-content: space-between;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .btn-header-call {
+                display: flex;
+                padding: 6px 12px;
+                font-size: 0.85rem;
+                margin-left: 10px;
+            }
+
+            .hero {
+                min-height: 450px;
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 40px;
+            }
+
+            .footer-section {
+                flex: 1 1 45%;
+                min-width: unset;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                font-size: 0.9rem;
+            }
+
+            .btn-header-call {
+                padding: 5px 10px;
+                font-size: 0.75rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-section {
+                min-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .testimonial-card {
+                padding: 20px;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* SOLUCIÓN ESPECÍFICA: Ajustes para pantallas donde se corta el texto */
+        @media (max-width: 1100px) and (min-width: 901px) {
+            .hero h1 {
+                font-size: 2.7rem;
+            }
+        }
+
+        @media (max-width: 800px) and (min-width: 601px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://wa.me/5219991854802?text=¡Hola!%20Visité%20su%20sitio%20web%20y%20me%20interesa%20su%20servicio%20de%20reparación%20express."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">CASP<span>Informática</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#beneficios">Ventajas</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li>
+                        <a href="tel:+529991854802" class="btn btn-primary btn-call">
+                            <i class="fas fa-phone-alt"></i> Llamar Ahora
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="tel:+529991854802" class="btn btn-primary btn-call btn-header-call">
+                <i class="fas fa-phone-alt"></i> Llamar
+            </a>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <!-- SOLUCIÓN APLICADA: Texto optimizado para evitar cortes -->
+            <h1 class="animate-in">Tu <span class="brand-highlight">Solución Informática Express</span><span class="emoji-rocket">🚀</span></h1>
+            <p class="animate-in">
+                ¡Reparaciones en solo <span class="brand-highlight">30 a 90 minutos!</span> Diagnosticamos y reparamos
+                tu PC o Laptop al instante, sin que tengas que dejar tu equipo.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5219991854802?text=¡Hola!%20Necesito%20una%20reparación%20express.%20Mi%20equipo%20está%20..."
+                    class="btn btn-primary pulse" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i> ¡WhatsApp Express!
+                </a>
+                <a href="tel:+529991854802" class="btn btn-call">
+                    <i class="fas fa-phone-alt"></i> Llámanos Ahora
+                </a>
+                <a href="#servicios" class="btn btn-outline">
+                    <i class="fas fa-search-plus"></i> Ver Nuestros Servicios
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios <span>Clave</span></h2>
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>Optimización de Rendimiento</h3>
+                    <p>Acelera tu PC o Laptop. Limpieza profunda de software y optimización del sistema operativo para
+                        que funcione como nueva.</p>
+                    <div class="service-actions">
+                        <a href="https://wa.me/5219991854802?text=¡Hola!%20Mi%20computadora%20está%20muy%20lenta%20y%20necesito%20una%20optimización%20express.%20¿Disponibilidad?"
+                            class="btn btn-service" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-bolt"></i> Optimizar Express
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hdd"></i></div>
+                    <h3>Upgrade a Disco SSD/RAM</h3>
+                    <p>La mejor mejora de velocidad. Instalación y migración de datos a discos de estado sólido (SSD) y
+                        expansión de memoria RAM.</p>
+                    <div class="service-actions">
+                        <a href="https://wa.me/5219991854802?text=¡Buen%20día!%20Quisiera%20cotizar%20un%20upgrade%20a%20SSD%20y%20RAM.%20Mi%20equipo%20es%20..."
+                            class="btn btn-service" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-microchip"></i> Cotizar Upgrade
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h3>Eliminación de Virus y Malware</h3>
+                    <p>Protege tu información. Limpieza completa de virus, spyware y software malicioso que compromete
+                        la seguridad y velocidad.</p>
+                    <div class="service-actions">
+                        <a href="https://wa.me/5219991854802?text=¡Urgente!%20Creo%20que%20mi%20computadora%20tiene%20virus.%20¿Podrían%20ayudarme%20con%20una%20limpieza%20completa?"
+                            class="btn btn-service" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-user-shield"></i> Limpieza Completa
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-print"></i></div>
+                    <h3>Reparación de Impresoras</h3>
+                    <p>Diagnóstico y reparación de problemas de impresión, atascos, cartuchos y servicio de
+                        mantenimiento preventivo de equipos.</p>
+                    <div class="service-actions">
+                        <a href="https://wa.me/5219991854802?text=¡Hola!%20Necesito%20reparar%20mi%20impresora.%20¿Podrían%20darme%20un%20diagnóstico%20rápido?"
+                            class="btn btn-service" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-cogs"></i> Servicio Impresoras
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-desktop"></i></div>
+                    <h3>Reparación de Pantallas/Teclados</h3>
+                    <p>Solución a daños físicos. Reemplazo rápido de pantallas rotas, teclados con teclas fallando y
+                        otros componentes.</p>
+                    <div class="service-actions">
+                        <a href="https://wa.me/5219991854802?text=¡Hola!%20Necesito%20cambiar%20la%20pantalla/teclado%20de%20mi%20laptop.%20¿Podrían%20cotizarme%20el%20servicio?"
+                            class="btn btn-service" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-tools"></i> Cotizar Reparación
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-undo-alt"></i></div>
+                    <h3>Recuperación de Datos</h3>
+                    <p>Intentamos recuperar tu información valiosa de discos duros con fallos lógicos, formateados o
+                        particiones perdidas.</p>
+                    <div class="service-actions">
+                        <a href="https://wa.me/5219991854802?text=¡Ayuda!%20Necesito%20un%20servicio%20de%20recuperación%20de%20datos%20urgente."
+                            class="btn btn-service" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-save"></i> Recuperar Datos
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#contacto" class="btn btn-primary">
+                    <i class="fas fa-handshake"></i> ¿Necesitas otro servicio? ¡Contáctanos!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <h2 class="section-title">¿Por Qué Elegir <span>CASPInformática</span>?</h2>
+            <div class="benefits-grid">
+
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Taller Express</h3>
+                    <p>El 90% de las reparaciones se completan en menos de 2 horas. No pierdas tiempo.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Servicio a la Vista</h3>
+                    <p>No tienes que dejar tu equipo. Observa todo el proceso de diagnóstico y reparación.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Garantía y Confianza</h3>
+                    <p>Refacciones de calidad y garantía escrita en todos los servicios y componentes instalados.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-medal"></i></div>
+                    <h3>Técnicos Expertos</h3>
+                    <p>Personal certificado y con más de 10 años de experiencia solucionando problemas complejos.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Clientes <span>Opinen</span></h2>
+            <div class="testimonial-grid">
+
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Llevé mi laptop lenta y en 45 minutos ya estaba lista. Me explicaron todo el proceso. ¡Servicio
+                        increíble!"</p>
+                    <div class="author-info">- María C.</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"El cambio de disco duro a SSD fue rapidísimo y mi equipo vuela ahora. Muy profesionales y el
+                        precio justo."</p>
+                    <div class="author-info">- Javier R.</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Me rescataron información importante que creí perdida. Honestidad y transparencia en el
+                        diagnóstico, lo recomiendo al 100%."</p>
+                    <div class="author-info">- Roberto S.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-actions" id="contacto">
+        <div class="container">
+            <h2 class="section-title">¿Listo para <span class="brand-highlight">Reparar tu Equipo</span>?</h2>
+            <p style="max-width: 700px; margin: 0 auto 50px;">Elige la opción que mejor se adapte a tu necesidad y ¡te
+                atenderemos de inmediato por WhatsApp o por teléfono!</p>
+            <div class="actions-grid">
+
+                <div class="action-card">
+                    <div class="service-icon" style="font-size: 2.5rem;"><i class="fab fa-whatsapp"></i></div>
+                    <h3>Mensaje Express</h3>
+                    <p>Envíanos un mensaje con el problema. Ideal para cotizar sin compromiso.</p>
+                    <a href="https://wa.me/5219991854802?text=¡Hola!%20Tengo%20una%20pregunta%20sobre%20una%20reparación."
+                        class="btn btn-service" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i> Chatear Ahora
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <div class="service-icon" style="font-size: 2.5rem; color: #28a745;"><i
+                            class="fas fa-phone-alt"></i></div>
+                    <h3>Llamada Rápida</h3>
+                    <p>Si tu equipo no enciende o es una emergencia, llámanos para atención inmediata.</p>
+                    <a href="tel:+529991854802" class="btn btn-service btn-call">
+                        <i class="fas fa-phone-alt"></i> Llámanos Ahora
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <div class="service-icon" style="font-size: 2.5rem; color: var(--primary);"><i
+                            class="fas fa-map-marker-alt"></i></div>
+                    <h3>Visítanos</h3>
+                    <p>Agenda tu visita y trae tu equipo. Reparación express en nuestro taller.</p>
+                    <a href="https://maps.app.goo.gl/nGwogpiwTh4Ev88t5" class="btn btn-service" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fas fa-route"></i> Ver Ubicación
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3723.7171656777723!2d-89.6400556!3d21.044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDAyJzM4LjQiTiA4OcKwMzgnMjQuMiJX!5e0!3m2!1ses-419!2smx!4v1760908271787!5m2!1ses-419!2smx"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <p>Encuéntranos fácilmente en Calle 40 #261 x 33 y 29, Fracc. Francisco de Montejo V, Mérida, Yuc. ¡Te esperamos
+            para una reparación express!</p>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>CASPInformática</h3>
+                <p>Somos tu hospital de PCs y Laptops, enfocados en diagnósticos y reparaciones rápidas con total
+                    transparencia y garantía. No dejes tu equipo, míralo reparar.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Servicios Principales</h3>
+                <ul>
+                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Optimización de Sistemas</a></li>
+                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Upgrade SSD/RAM</a></li>
+                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Eliminación de Virus</a></li>
+                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Reparación de Hardware</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto Rápido</h3>
+                <ul>
+                    <li><i class="fas fa-phone-alt"></i> Teléfono: <a href="tel:+529991854802">+52 999 185 4802</a></li>
+                    <li><i class="fab fa-whatsapp"></i> WhatsApp: <a
+                            href="https://wa.me/5219991854802?text=¡Hola!%20Me%20interesa%20un%20servicio%20de%20reparación."
+                            target="_blank" rel="noopener noreferrer">+52 999 185 4802</a></li>
+                    <li><i class="fas fa-envelope"></i> Email: <a href="mailto:luistilanramirez@gmail.com
+">luistilanramirez@gmail.com
+                        </a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Dirección: <a
+                            href="https://maps.app.goo.gl/nGwogpiwTh4Ev88t5" target="_blank"
+                            rel="noopener noreferrer">Calle 40 #261 x 33 y 29, Fracc. Francisco de Montejo V, Mérida,
+                            Yuc.</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Horarios de Taller ⏰</h3>
+                <ul class="schedule-list">
+                    <li><span class="day">Lunes a Jueves:</span> 9 a.m. - 3 p.m. | 6 p.m. - 10 p.m.</li>
+                    <li><span class="day">Viernes:</span> 9 a.m. - 3 p.m.</li>
+                    <li><span class="day">Sábado:</span> 4 a.m. - 10 p.m.</li>
+                    <li><span class="day">Domingo:</span> 10 a.m. - 10 p.m.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            © 2025 CASPInformática. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+
+</html>

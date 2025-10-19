@@ -7,7 +7,9 @@
     <title>CASPInformática | Hospital de PCs y Laptops - Reparación Express en 30-90 Minutos</title>
     <meta name="description"
         content="Reparación express de PCs y laptops en 30-90 minutos. Optimización, eliminación de virus, cambio de pantallas y más. Servicio técnico profesional con garantía.">
+
     <link rel="icon" type="image/png" href="favicon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,7 +20,7 @@
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.1 // El elemento es visible en un 10%
+                threshold: 0.1
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
@@ -34,7 +36,6 @@
                 observer.observe(el);
             });
 
-            // Habilita la animación para el Hero inmediatamente
             document.querySelectorAll('.animate-in').forEach(el => {
                 el.classList.add('visible');
             });
@@ -42,22 +43,14 @@
     </script>
 
     <style>
-        /* ==================== 1. Variables y Reset ==================== */
         :root {
             --primary: #1F618D;
-            /* Azul profesional oscuro */
             --secondary: #FF8C00;
-            /* Naranja vibrante para el acento */
             --accent: #FFD700;
-            /* Dorado/Amarillo para resaltar */
             --light: #FFFFFF;
-            /* Blanco */
             --dark: #212121;
-            /* Negro para texto principal */
             --gray-light: #E7EEF4;
-            /* Gris muy suave */
             --gray-medium: #607D8B;
-            /* Azul Grisáceo para texto secundario */
             --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.08);
             --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
@@ -87,7 +80,6 @@
             padding: 0 20px;
         }
 
-        /* ==================== 2. Animaciones y Visibilidad ==================== */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -138,7 +130,6 @@
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        /* ==================== 3. Tipografía y Encabezados ==================== */
         h1,
         h2,
         h3 {
@@ -157,7 +148,6 @@
             color: var(--secondary);
         }
 
-        /* SOLUCIÓN DEFINITIVA: Ajustes específicos para evitar cortes */
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 15px;
@@ -173,13 +163,11 @@
             position: relative;
         }
 
-        /* Garantizar que el emoji esté siempre visible y no cause cortes */
         .emoji-rocket {
             display: inline-block;
             margin-left: 4px;
         }
 
-        /* ==================== 4. Botones (CTA) ==================== */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -246,7 +234,6 @@
             box-shadow: var(--shadow-subtle);
         }
 
-        /* ==================== 5. Header y Nav ==================== */
         header {
             background-color: var(--primary);
             color: white;
@@ -287,7 +274,6 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: color 0.3s ease;
-            position: relative;
         }
 
         .nav-links a:hover {
@@ -303,7 +289,6 @@
             display: none;
         }
 
-        /* ==================== 6. Hero Section ==================== */
         .hero {
             background: linear-gradient(rgba(33, 33, 33, 0.40), rgba(33, 33, 33, 0.40)),
                 url('fondo-hero.jpg') no-repeat center center/cover;
@@ -331,12 +316,10 @@
             flex-wrap: wrap;
         }
 
-        /* ==================== 7. Secciones Generales ==================== */
         section {
             padding: 80px 0;
         }
 
-        /* ==================== 8. Servicios ==================== */
         .services {
             background-color: var(--light);
         }
@@ -391,7 +374,6 @@
             margin-top: auto;
         }
 
-        /* ==================== 9. Beneficios/Por Qué Elegirnos ==================== */
         .benefits {
             background-color: var(--primary);
             color: white;
@@ -423,7 +405,6 @@
             font-size: 1.4rem;
         }
 
-        /* ==================== 10. Testimonios ==================== */
         .testimonials {
             background-color: var(--gray-light);
             padding: 100px 0;
@@ -460,7 +441,6 @@
             margin-bottom: 10px;
         }
 
-        /* ==================== 11. Contacto Rápido ==================== */
         .quick-actions {
             background-color: var(--primary);
             color: white;
@@ -518,7 +498,6 @@
             background-color: #28a745;
         }
 
-        /* ==================== 12. Sección de Mapa ==================== */
         .map-section {
             padding: 0;
             background-color: var(--light);
@@ -549,7 +528,6 @@
             background-color: var(--light);
         }
 
-        /* ==================== 13. WhatsApp Flotante ==================== */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -578,7 +556,6 @@
             display: block;
         }
 
-        /* ==================== 14. Footer ==================== */
         footer {
             background-color: var(--dark);
             color: white;
@@ -658,7 +635,6 @@
             color: var(--gray-medium);
         }
 
-        /* ==================== 15. Media Queries (Responsivo) ==================== */
         @media (max-width: 900px) {
             .nav-links {
                 display: none;
@@ -745,7 +721,6 @@
             }
         }
 
-        /* SOLUCIÓN ESPECÍFICA: Ajustes para pantallas donde se corta el texto */
         @media (max-width: 1100px) and (min-width: 901px) {
             .hero h1 {
                 font-size: 2.7rem;
@@ -796,8 +771,8 @@
 
     <section class="hero" id="inicio">
         <div class="container hero-content">
-            <!-- SOLUCIÓN APLICADA: Texto optimizado para evitar cortes -->
-            <h1 class="animate-in">Tu <span class="brand-highlight">Solución Informática Express</span><span class="emoji-rocket">🚀</span></h1>
+            <h1 class="animate-in">Tu <span class="brand-highlight">Solución Informática Express</span><span
+                    class="emoji-rocket">🚀</span></h1>
             <p class="animate-in">
                 ¡Reparaciones en solo <span class="brand-highlight">30 a 90 minutos!</span> Diagnosticamos y reparamos
                 tu PC o Laptop al instante, sin que tengas que dejar tu equipo.
@@ -944,7 +919,7 @@
 
     <section class="testimonials" id="testimonios">
         <div class="container">
-            <h2 class="section-title">Nuestros Clientes <span>Opinan</span></h2>
+            <h2 class="section-title">Nuestros Clientes <span>Opinen</span></h2>
             <div class="testimonial-grid">
 
                 <div class="testimonial-card">
@@ -1045,10 +1020,13 @@
             <div class="footer-section">
                 <h3>Servicios Principales</h3>
                 <ul>
-                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Optimización de Sistemas</a></li>
-                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Upgrade SSD/RAM</a></li>
-                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Eliminación de Virus</a></li>
-                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Reparación de Hardware</a></li>
+                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Optimización de Rendimiento</a></li>
+                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Upgrade a Disco SSD/RAM</a></li>
+                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Eliminación de Virus y Malware</a></li>
+                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Reparación de Impresoras</a></li>
+                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Reparación de Pantallas/Teclados</a>
+                    </li>
+                    <li><i class="fas fa-arrow-right"></i> <a href="#servicios">Recuperación de Datos</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -1058,9 +1036,8 @@
                     <li><i class="fab fa-whatsapp"></i> WhatsApp: <a
                             href="https://wa.me/5219991854802?text=¡Hola!%20Me%20interesa%20un%20servicio%20de%20reparación."
                             target="_blank" rel="noopener noreferrer">+52 999 185 4802</a></li>
-                    <li><i class="fas fa-envelope"></i> Email: <a href="mailto:luistilanramirez@gmail.com
-">luistilanramirez@gmail.com
-                        </a></li>
+                    <li><i class="fas fa-envelope"></i> Email: <a
+                            href="mailto:luistilanramirez@gmail.com">luistilanramirez@gmail.com</a></li>
                     <li><i class="fas fa-map-marker-alt"></i> Dirección: <a
                             href="https://maps.app.goo.gl/nGwogpiwTh4Ev88t5" target="_blank"
                             rel="noopener noreferrer">Calle 40 #261 x 33 y 29, Fracc. Francisco de Montejo V, Mérida,
